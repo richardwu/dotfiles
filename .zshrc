@@ -27,3 +27,5 @@ alias mv="mv -iv"
 alias cp="cp -iv"
 
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
+
+alias gitamend="git commit -a --amend --no-edit; git push --force"
