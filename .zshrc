@@ -11,7 +11,7 @@ source $ZSH/oh-my-zsh.sh
 
 #sublime text alias quick command
 sublime() {
-	open $1 -a "Sublime Text 2"		
+	open $1 -a "Sublime Text"
 }
 alias sub=sublime
 
@@ -29,3 +29,4 @@ alias cp="cp -iv"
 [ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
 
 alias gitamend="git commit -a --amend --no-edit; git push --force"
+alias gitco="git checkout"

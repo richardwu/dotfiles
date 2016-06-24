@@ -21,6 +21,9 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 " ag is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
 
+" show up to 100 results
+let g:ctrlp_match_window = 'results:100'
+
 " set root of ag to current directory
 let g:ag_working_path_mode="r"
 endif
@@ -29,4 +32,5 @@ endif
 nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " remove trailing whitespaces
-autocmd BufWritePre *.py :%s/\s\+$//e
+autocmd BufWritePre * :%s/\s\+$//e
+
