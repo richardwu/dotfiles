@@ -9,6 +9,7 @@ set cursorline
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 set runtimepath^=~/.vim/bundle/ag
 set clipboard=unnamedplus
+match ErrorMsg '\%>120v.\+'
 
 " The Silver Searcher
 if executable('ag')
