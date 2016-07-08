@@ -1,0 +1,13 @@
+[color]
+	ui = true
+[user]
+	name = Richard Wu
+	email = richard.wu@shopify.com
+[credential]
+	helper = osxkeychain
+[push]
+	default = simple
+[alias]
+	co = checkout
+        br = branch
+        st = status
