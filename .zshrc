@@ -6,7 +6,7 @@ ZSH_THEME="robbyrussell"
 
 # User configuration
 
-export PATH="/Users/rwu1997/.gem/ruby/2.2.3/bin:/usr/local/Cellar/shopify-ruby/2.2.3-shopify_2/lib/ruby/gems/2.2.0/bin:/opt/rubies/2.2.3p172-shopify/bin:/Users/rwu1997/.nvm/versions/node/v5.7.0/bin:/Users/rwu1997/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
+export PATH="/Users/rwu1997/.gem/ruby/2.2.3/bin:/usr/local/Cellar/shopify-ruby/2.2.3-shopify_2/lib/ruby/gems/2.2.0/bin:/opt/rubies/2.2.3p172-shopify/bin:/Users/rwu1997/.nvm/versions/node/v5.7.0/bin:/Users/rwu1997/.rbenv/shims:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/rwu1997/anaconda2/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 alias zshrc="vim ~/.zshrc"
@@ -25,3 +25,4 @@ alias ffs="dev down && dev up && dev server"
 
 #Git
 alias gitamend="git commit -a --amend --no-edit; git push --force"
+
