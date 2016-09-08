@@ -26,3 +26,5 @@ alias ffs="dev down && dev up && dev server"
 #Git
 alias gitamend="git commit -a --amend --no-edit; git push --force"
 
+#chruby
+source /usr/local/opt/chruby/share/chruby/chruby.sh

@@ -1,3 +1,4 @@
+color peachpuff
 set number
 set expandtab
 set wrap
