@@ -1,3 +1,8 @@
+execute pathogen#infect()
+
+syntax on
+filetype plugin indent on
+
 color peachpuff
 set number
 set expandtab
@@ -7,9 +12,9 @@ set smartindent
 set shiftwidth=2
 set softtabstop=2
 set cursorline
-set runtimepath^=~/.vim/bundle/ctrlp.vim
-set runtimepath^=~/.vim/bundle/ag
-set clipboard=unnamedplus
+set clipboard=unnamed
+set fdm=syntax
+set backspace=indent,eol,start
 match ErrorMsg '\%>120v.\+'
 
 " The Silver Searcher
@@ -35,4 +40,3 @@ nnoremap K :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " remove trailing whitespaces
 autocmd BufWritePre * :%s/\s\+$//e
-
