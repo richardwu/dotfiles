@@ -17,7 +17,7 @@ set softtabstop=2
 set cursorline
 set clipboard=unnamed
 set backspace=indent,eol,start
-match ErrorMsg '\%>120v.\+'
+match ErrorMsg '\%>100v.\+'
 
 " The Silver Searcher
 if executable('ag')
