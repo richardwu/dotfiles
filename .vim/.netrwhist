@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
+let g:netrw_dirhist_cnt =3
 let g:netrw_dirhist_1='/Users/rwu1997/Dropbox/uni-courses/2B/CS240E/assignments/a8'
+let g:netrw_dirhist_2='/Users/rwu1997/Dropbox/uni-courses/2B/MATH239/assignments/a10'
+let g:netrw_dirhist_3='/Users/rwu1997/Desktop/Programming/richardwu.github.io/notes'

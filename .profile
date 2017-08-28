@@ -1,0 +1,25 @@
+export CODE=$HOME/Desktop/Programming
+local UNI_TERM=2B
+export UNI=$HOME/Dropbox/uni-courses/$UNI_TERM
+export EDITOR=nvim
+
+#sublime
+alias sub="open $1 -a \"Sublime Text 2\""
+
+#override file commands
+alias rm="rm -iv"
+alias mv="mv -iv"
+alias cp="cp -iv"
+
+# PATH additions
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
+
+# MacPorts Installer addition on 2015-11-10_at_10:45:35: adding an appropriate PATH variable for use with MacPorts.
+export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
+# Finished adapting your PATH environment variable for use with MacPorts.
+
+# added by Anaconda3 4.3.1 installer
+export PATH="/Users/rwu1997/anaconda3/bin:$PATH"

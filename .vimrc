@@ -2,9 +2,12 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
+" Folding (collapse sections)
+set fdm=syntax
 
 color peachpuff
 set number
+set relativenumber
 set expandtab
 set wrap
 set hlsearch
@@ -13,7 +16,6 @@ set shiftwidth=2
 set softtabstop=2
 set cursorline
 set clipboard=unnamed
-set fdm=syntax
 set backspace=indent,eol,start
 match ErrorMsg '\%>120v.\+'
 
