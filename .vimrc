@@ -2,11 +2,11 @@ execute pathogen#infect()
 
 syntax on
 filetype plugin indent on
+colorscheme torte
 " Folding (collapse sections)
 " set fdm=syntax
 set nofoldenable
 
-color peachpuff
 set number
 set relativenumber
 set expandtab
@@ -18,7 +18,10 @@ set softtabstop=2
 set cursorline
 set clipboard=unnamed
 set backspace=indent,eol,start
+" Code max length
 match ErrorMsg '\%>100v.\+'
+" Comments max length
+set cc=80
 
 " The Silver Searcher
 if executable('ag')

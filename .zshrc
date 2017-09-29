@@ -5,4 +5,7 @@ source $ZSH/oh-my-zsh.sh
 # OPAM configuration
 . $HOME/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
 
+# Treat **/ recursively
+set -s globstar
+
 source ~/.profile

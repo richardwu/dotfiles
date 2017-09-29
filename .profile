@@ -36,3 +36,6 @@ export ROACH_SCRIPTS_DIR="$HOME/scripts/cockroach"
 
 alias goroach="cd $ROACH; pwd"
 alias startroach="sh $ROACH_SCRIPTS_DIR/start-cluster.sh"
+
+export PATH="/Users/richardwu/go/src/github.com/cockroachlabs/production/crl-prod:$PATH"
+export PATH="/Users/richardwu/go/src/golang.org/x/perf/cmd/benchstat:$PATH"
