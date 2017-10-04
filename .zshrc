@@ -8,4 +8,16 @@ source $ZSH/oh-my-zsh.sh
 # Treat **/ recursively
 set -s globstar
 
+# Github open origin remote in Chrome
+ghurl(){
+  echo https://$(git remote show origin | grep 'Fetch URL' | grep -o 'github\.com.*' | sed 's/:/\//')
+}
+
+github(){
+  url=$(ghurl)
+  echo "opening $url..."
+  open $url
+}
+
+
 source ~/.profile
