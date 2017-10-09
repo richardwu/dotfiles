@@ -13,10 +13,38 @@ ghurl(){
   echo https://$(git remote show origin | grep 'Fetch URL' | grep -o 'github\.com.*' | sed 's/:/\//')
 }
 
+# returns the full checked out branch name
+# e.g. origin/master
+ghbranch() {
+  branch=$(git branch -vv | grep \* | grep -o '\[.*\]' | cut -d ':' -f 1)
+  branch=${branch#\[}
+  branch=${branch%\]}
+  echo $branch
+}
+
+ghremote() {
+  if [ $# -ne 1 ]; then
+    echo "ghremote() requires <remote-alias>"
+    exit 1
+  fi
+
+  echo $(git remote -v | grep "$1.*push" | grep -o ':.*/' | cut -d ':' -f 2 | cut -d '/' -f 1)
+}
+
 github(){
   url=$(ghurl)
-  echo "opening $url..."
-  open $url
+  branch=$(ghbranch)
+
+  declare final=${url%.git}
+  echo $branch
+  if [ $branch != "origin/master" ]; then
+    remotealias=$(echo $branch | cut -d '/' -f 1)
+    remote=$(ghremote $remotealias)
+    updatedbranch=$(echo $branch | sed "s/$remotealias/$remote/" | sed 's/\//:/')
+    final="$final/compare/master...$updatedbranch?expand=1"
+  fi
+  echo "opening $final..."
+  open $final
 }
 
 
