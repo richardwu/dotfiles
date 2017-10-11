@@ -1,10 +1,24 @@
-execute pathogen#infect()
+" required by Vundle
+set nocompatible
+filetype off
+
+" Begin Vundle plugins {{{
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'VundleVim/Vundle.vim'
+
+Plugin 'mileszs/ack.vim'
+Plugin 'git://github.com/ctrlpvim/ctrlp.vim.git'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'git://github.com/fatih/vim-go.git'
+
+call vundle#end()
+filetype plugin indent on
+" }}}
 
 syntax on
-filetype plugin indent on
 colorscheme torte
-" Folding (collapse sections)
-" set fdm=syntax
 set nofoldenable
 
 set number
@@ -23,8 +37,13 @@ match ErrorMsg '\%>100v.\+'
 " Comments max length
 set cc=80
 
+" Remap leader key
+let mapleader=','
+
 " The Silver Searcher
 if executable('ag')
+" Use ag over ack
+let g:ackprg='ag --nogroup --nocolor --column'
 " Use ag over grep
 set grepprg=ag\ --nogroup\ --nocolor
 
@@ -37,8 +56,8 @@ let g:ctrlp_use_caching = 0
 " show up to 50 results
 let g:ctrlp_match_window = 'results:50'
 
-" set root of ag to current directory
-let g:ag_working_path_mode="r"
+" set root of ag to .git ancestor directory (r), otherwise current directory (a)
+let g:ag_working_path_mode="ra"
 endif
 
 " bind K to grep word under cursor
@@ -59,6 +78,10 @@ autocmd BufWritePre * :%s/\s\+$//e
   let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
   let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
   let g:go_def_mode = 'godef'
+
+  au FileType go nmap <leader>gd <Plug>(go-def)
+  au FileType go nmap <leader>gi <Plug>(go-implements)
+  au FileType go nmap <leader>gr <Plug>(go-referrers)
 " }}}"
 
 " Commenting blocks of code. {{{

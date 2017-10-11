@@ -16,7 +16,7 @@ ghurl(){
 # returns the full checked out branch name
 # e.g. origin/master
 ghbranch() {
-  branch=$(git branch -vv | grep \* | grep -o '\[.*\]' | cut -d ':' -f 1)
+  declare branch=$(git branch -vv | grep \* | grep -o '\[.*\]' | cut -d ':' -f 1)
   branch=${branch#\[}
   branch=${branch%\]}
   echo $branch
@@ -32,15 +32,14 @@ ghremote() {
 }
 
 github(){
-  url=$(ghurl)
-  branch=$(ghbranch)
+  declare url=$(ghurl)
+  declare branch=$(ghbranch)
 
   declare final=${url%.git}
-  echo $branch
   if [ $branch != "origin/master" ]; then
-    remotealias=$(echo $branch | cut -d '/' -f 1)
-    remote=$(ghremote $remotealias)
-    updatedbranch=$(echo $branch | sed "s/$remotealias/$remote/" | sed 's/\//:/')
+    declare remotealias=$(echo $branch | cut -d '/' -f 1)
+    declare remote=$(ghremote $remotealias)
+    declare updatedbranch=$(echo $branch | sed "s/$remotealias/$remote/" | sed 's/\//:/')
     final="$final/compare/master...$updatedbranch?expand=1"
   fi
   echo "opening $final..."
