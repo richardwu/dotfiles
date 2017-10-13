@@ -10,7 +10,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'mileszs/ack.vim'
 Plugin 'git://github.com/ctrlpvim/ctrlp.vim.git'
-Plugin 'Valloric/YouCompleteMe'
 Plugin 'git://github.com/fatih/vim-go.git'
 
 call vundle#end()
