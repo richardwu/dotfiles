@@ -25,7 +25,7 @@ ghbranch() {
 ghremote() {
   if [ $# -ne 1 ]; then
     echo "ghremote() requires <remote-alias>"
-    exit 1
+    return 1
   fi
 
   echo $(git remote -v | grep "$1.*push" | grep -o ':.*/' | cut -d ':' -f 2 | cut -d '/' -f 1)
@@ -39,6 +39,9 @@ github(){
   if [ $branch != "origin/master" ]; then
     declare remotealias=$(echo $branch | cut -d '/' -f 1)
     declare remote=$(ghremote $remotealias)
+    if [ $? -eq 1 ]; then
+      return 2
+    fi
     declare updatedbranch=$(echo $branch | sed "s/$remotealias/$remote/" | sed 's/\//:/')
     final="$final/compare/master...$updatedbranch?expand=1"
   fi
