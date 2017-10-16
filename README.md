@@ -16,6 +16,11 @@ ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 ```
 
+Configure `gitignore_global`:
+```
+git config --global core.excludesfile ~/.gitignore
+```
+
 Install `tmux`
 ```
 brew install tmux

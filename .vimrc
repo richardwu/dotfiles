@@ -79,8 +79,10 @@ autocmd BufWritePre * :%s/\s\+$//e
   let g:go_def_mode = 'godef'
 
   au FileType go nmap <leader>gd <Plug>(go-def)
-  au FileType go nmap <leader>gi <Plug>(go-implements)
+  au FileType go nmap <leader>gi <Plug>(go-info)
   au FileType go nmap <leader>gr <Plug>(go-referrers)
+  au FileType go nmap <leader>gc <Plug>(go-callers)
+  au FileType go nmap <leader>gm <Plug>(go-implements)
 " }}}"
 
 " Commenting blocks of code. {{{

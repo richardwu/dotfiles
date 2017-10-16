@@ -11,3 +11,5 @@
 	co = checkout
         br = branch
         st = status
+[core]
+	excludesfile = /Users/richardwu/.gitignore_global
