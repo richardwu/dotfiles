@@ -96,3 +96,6 @@ autocmd FileType ocaml              let b:comment_leader = '(* '
 noremap <silent> ,cc :<C-B>silent <C-E>s/^/<C-R>=escape(b:comment_leader,'\/')<CR>/<CR>:nohlsearch<CR>
 noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<CR>//e<CR>:nohlsearch<CR>
 " }}}"
+
+" crlogictest syntax highlighting
+autocmd BufNewFile,BufRead */sql/logictest/testdata/* set filetype=crlogictest tw=0
