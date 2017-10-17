@@ -1,18 +1,16 @@
-export CODE=$HOME/Desktop/Programming
 local UNI_TERM=2B
 export UNI=$HOME/Dropbox/uni-courses/$UNI_TERM
 export EDITOR=vim
-
-#sublime
-alias sub="open $1 -a \"Sublime Text 2\""
 
 #override file commands
 alias rm="rm -iv"
 alias mv="mv -iv"
 alias cp="cp -iv"
 
-# PATH additions
+# custom alias
+alias code="cd ~/Programming"
 
+# PATH additions {{{
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
@@ -29,6 +27,7 @@ export PATH="/usr/local/opt/ccache/libexec:$PATH"
 
 # Go
 export GOPATH="$HOME/go"
+# }}}
 
 # CockroachDB
 export ROACH="$GOPATH/src/github.com/cockroachdb/cockroach"
