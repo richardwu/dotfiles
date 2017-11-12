@@ -9,7 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'mileszs/ack.vim'
-Plugin 'git://github.com/ctrlpvim/ctrlp.vim.git'
+Plugin 'junegunn/fzf.vim'
 Plugin 'git://github.com/fatih/vim-go.git'
 
 call vundle#end()
@@ -39,31 +39,44 @@ set cc=80
 " Remap leader key
 let mapleader=','
 
-" The Silver Searcher
-if executable('ag')
-" Use ag over ack
-let g:ackprg='ag --nogroup --nocolor --column'
-" Use ag over grep
-set grepprg=ag\ --nogroup\ --nocolor
-
-" Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
-let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-
-" ag is fast enough that CtrlP doesn't need to cache
-let g:ctrlp_use_caching = 0
-
-" show up to 50 results
-let g:ctrlp_match_window = 'results:50'
-
-" set root of ag to .git ancestor directory (r), otherwise current directory (a)
-let g:ag_working_path_mode="ra"
-endif
+" remove trailing whitespaces
+autocmd BufWritePre * :%s/\s\+$//e
 
 " bind K to grep word under cursor
 nnoremap <C-K> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
-" remove trailing whitespaces
-autocmd BufWritePre * :%s/\s\+$//e
+" tabs binding {{{
+  " new
+  map <C-t>n :tabnew<cr>
+  " close
+  map <C-t>c :tabc<cr>
+  " first
+  map <C-t>k :tabr<cr>
+  " last
+  map <C-t>j :tabl<cr>
+  " previous
+  map <C-t>h :tabp<cr>
+  " next
+  map <C-t>l :tabn<cr>
+" }}}
+
+" The Silver Searcher {{{
+  if executable('ag')
+    " Use ag over ack
+    let g:ackprg='ag --nogroup --nocolor --column'
+    " Use ag over grep
+    set grepprg=ag\ --nogroup\ --nocolor
+  endif
+" }}}
+
+" fzf {{{
+  set rtp+=/usr/local/opt/fzf
+  map <C-p> :Files<cr>
+  let g:fzf_layout = {'down': '~30%'}
+
+  let g:fzf_colors = {
+        \ 'border': ['fg', 'Normal'] }
+" }}}
 
 " Vim Go {{{
   let g:go_highlight_functions = 1
@@ -78,7 +91,7 @@ autocmd BufWritePre * :%s/\s\+$//e
   let g:syntastic_mode_map = { 'mode': 'active', 'passive_filetypes': ['go'] }
   let g:go_def_mode = 'godef'
 
-  au FileType go nmap <leader>gd <Plug>(go-def)
+  au FileType go nmap <leader>gd <Plug>(go-describe)
   au FileType go nmap <leader>gi <Plug>(go-info)
   au FileType go nmap <leader>gr <Plug>(go-referrers)
   au FileType go nmap <leader>gc <Plug>(go-callers)

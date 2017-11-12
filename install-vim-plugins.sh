@@ -1,13 +1,17 @@
 which brew > /dev/null
 
-# Get silver searcher
+# Get silver searcher and fzf
 if [ $? -eq 0 ]; then
   brew ls the_silver_searcher &> /dev/null
   if [ $? -ne 0 ]; then
     brew install the_silver_searcher
   fi
+  brew ls fzf &> /dev/null
+  if [ $? -ne 0 ]; then
+    brew install fzf
+  fi
 else
-  echo "[WARNING]: could not install the_silver_searcher (requires brew)"
+  echo "[WARNING]: could not install brew packages (requires brew)"
   exit 1
 fi
 
