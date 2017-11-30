@@ -20,7 +20,7 @@ export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
 
 # added by Anaconda3 5.0.1 installer
-export PATH="/Users/richardwu/anaconda3/bin:$PATH"
+export PATH="/Users/$USER/anaconda3/bin:$PATH"
 
 # Go
 export GOPATH="$HOME/go"
