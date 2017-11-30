@@ -16,15 +16,14 @@ ln -s ~/dotfiles/.zshrc ~/.zshrc
 ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
 ln -s ~/dotfiles/.vimrc ~/.vimrc
 ln -s ~/dotfiles/.vim/ ~/.vim
-ln -s ~/dotfiles/.gitconfig ~/.gitconfig
 ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
 ```
 
-## Git
+## Git configuration
 
-Configure `gitignore_global`:
+Configure aliases and global `.gitignore_global`:
 ```sh
-git config --global core.excludesfile ~/.gitignore
+./config-git.sh "Your Name" "Your email"
 ```
 
 ## tmux
@@ -45,7 +44,6 @@ brew install zsh zsh-completions
 
 To install all the Vim plugins, run the script
 ```sh
-chmod 755 install-vim-plugins.sh
 ./install-vim-plugins.sh
 ```
 Then open up Vim and run the command
