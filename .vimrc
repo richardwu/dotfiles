@@ -31,6 +31,7 @@ set softtabstop=2
 set cursorline
 set clipboard=unnamed
 set backspace=indent,eol,start
+set maxmempattern=10000
 " Code max length
 match ErrorMsg '\%>100v.\+'
 " Comments max length

@@ -11,10 +11,6 @@ alias cp="cp -iv"
 alias code="cd ~/Programming"
 
 # PATH additions {{{
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # MacPorts Installer addition on 2015-11-10_at_10:45:35: adding an appropriate PATH variable for use with MacPorts.
 export PATH="/opt/local/bin:/opt/local/sbin:$PATH"
 # Finished adapting your PATH environment variable for use with MacPorts.
@@ -35,9 +31,12 @@ export ROACH_SCRIPTS_DIR="$HOME/scripts/cockroach"
 alias goroach="cd $ROACH; pwd"
 alias startroach="sh $ROACH_SCRIPTS_DIR/start-cluster.sh"
 
-export PATH="/Users/$USER/go/src/github.com/cockroachlabs/production/crl-prod:$PATH"
-export PATH="/Users/$USER/go/src/golang.org/x/perf/cmd/benchstat:$PATH"
-export PATH="/Users/$USER/go/src/github.com/cockroachdb/cockroach/bin:$PATH"
+export PATH="$GOPATH/src/github.com/cockroachlabs/production/crl-prod:$PATH"
+export PATH="$GOPATH/src/github.com/cockroachlabs/roachprod:$PATH"
+export PATH="$GOPATH/src/github.com/cockroachdb/roachperf:$PATH"
+export PATH="$GOPATH/src/golang.org/x/perf/cmd/benchstat:$PATH"
+export PATH="$GOPATH/src/github.com/cockroachdb/cockroach/bin:$PATH"
+export PATH="$GOPATH/src/github.com/richardwu/roach-bench:$PATH"
 
 # Halite 2
 
