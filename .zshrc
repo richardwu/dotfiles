@@ -49,5 +49,4 @@ github(){
   open $final
 }
 
-
 source ~/.profile
