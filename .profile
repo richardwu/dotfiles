@@ -1,6 +1,6 @@
 local UNI_TERM=2B
 export UNI=$HOME/Dropbox/uni-courses/$UNI_TERM
-export EDITOR=vim
+export EDITOR=Vim
 
 #override file commands
 alias rm="rm -iv"
@@ -15,6 +15,7 @@ export PATH="/Users/$USER/anaconda3/bin:$PATH"
 
 # Go
 export GOPATH="$HOME/go"
+export PATH="$GOPATH/bin:$PATH"
 
 alias gogogo="cd $GOPATH"
 
@@ -26,10 +27,6 @@ alias goroach="cd $ROACH; pwd"
 alias startroach="sh $ROACH_SCRIPTS_DIR/start-cluster.sh"
 
 export PATH="$GOPATH/src/github.com/cockroachlabs/production/crl-prod:$PATH"
-export PATH="$GOPATH/src/github.com/cockroachlabs/roachprod:$PATH"
-export PATH="$GOPATH/src/github.com/cockroachdb/roachperf:$PATH"
-export PATH="$GOPATH/src/golang.org/x/perf/cmd/benchstat:$PATH"
-export PATH="$GOPATH/src/github.com/cockroachdb/cockroach/bin:$PATH"
 export PATH="$GOPATH/src/github.com/richardwu/roach-bench:$PATH"
 
 # Halite 2

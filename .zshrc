@@ -15,14 +15,14 @@ ghurl(){
 
 # returns the full checked out branch name
 # e.g. origin/master
-ghbranch() {
+function ghbranch() {
   declare branch=$(git branch -vv | grep \* | grep -o '\[.*\]' | cut -d ':' -f 1)
   branch=${branch#\[}
   branch=${branch%\]}
   echo $branch
 }
 
-ghremote() {
+function ghremote() {
   if [ $# -ne 1 ]; then
     echo "ghremote() requires <remote-alias>"
     return 1
@@ -31,7 +31,7 @@ ghremote() {
   echo $(git remote -v | grep "$1.*push" | grep -o ':.*/' | cut -d ':' -f 2 | cut -d '/' -f 1)
 }
 
-github(){
+function github(){
   declare url=$(ghurl)
   declare branch=$(ghbranch)
 
@@ -47,6 +47,10 @@ github(){
   fi
   echo "opening $final..."
   open $final
+}
+
+function saydone() {
+  ~/.isdone.osascript
 }
 
 source ~/.profile
