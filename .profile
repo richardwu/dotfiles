@@ -1,6 +1,6 @@
 local UNI_TERM=2B
-export UNI=$HOME/Dropbox/uni-courses/$UNI_TERM
-export EDITOR=Vim
+alias uni="cd $HOME/Dropbox/uni-courses/$UNI_TERM"
+export EDITOR=vim
 
 #override file commands
 alias rm="rm -iv"
