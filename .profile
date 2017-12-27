@@ -38,6 +38,10 @@ if [ $? -eq 0 ]; then
   eval "$(rbenv init -)"
 fi
 
+# Postgres
+export PGDATA='/usr/local/pgsql/data'
+
+
 # This needs to be last: ccache: caches C compiler outputs
 export PATH="/usr/local/opt/ccache/libexec:$PATH"
 
