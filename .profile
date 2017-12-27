@@ -38,9 +38,6 @@ if [ $? -eq 0 ]; then
   eval "$(rbenv init -)"
 fi
 
-# Vim with clipboard
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
-
 # This needs to be last: ccache: caches C compiler outputs
 export PATH="/usr/local/opt/ccache/libexec:$PATH"
 
