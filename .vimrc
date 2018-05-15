@@ -29,6 +29,7 @@ set smartindent
 set shiftwidth=2
 set softtabstop=2
 set cursorline
+# For Windows: you will need to enable X11 Forwarding in PuTTY/other emulator AND run an X11 server (e.g. VcXsrv)
 set clipboard=unnamed
 set backspace=indent,eol,start
 set maxmempattern=10000
