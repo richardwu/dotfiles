@@ -28,13 +28,14 @@ set hlsearch
 set smartindent
 set shiftwidth=2
 set softtabstop=2
+au FileType cpp,c set shiftwidth=4 softtabstop=4
 set cursorline
-# For Windows: you will need to enable X11 Forwarding in PuTTY/other emulator AND run an X11 server (e.g. VcXsrv)
+" For Windows: you will need to enable X11 Forwarding in PuTTY/other emulator AND run an X11 server (e.g. VcXsrv)
 set clipboard=unnamed
 set backspace=indent,eol,start
 set maxmempattern=10000
 " Code max length
-match ErrorMsg '\%>100v.\+'
+" match ErrorMsg '\%>100v.\+'
 " Comments max length
 set cc=80
 

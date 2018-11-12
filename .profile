@@ -1,14 +1,14 @@
-local UNI_TERM=2B
-alias uni="cd $HOME/Dropbox/uni-courses/$UNI_TERM"
+export uni="$HOME/Dropbox/uni-courses/4a"
+export code="$HOME/Programming"
+export box="$HOME/Dropbox"
+export web="$code/richardwu.github.io"
+
 export EDITOR=vim
 
 #override file commands
 alias rm="rm -iv"
 alias mv="mv -iv"
 alias cp="cp -iv"
-
-# custom alias
-alias code="cd ~/Programming"
 
 # added by Anaconda3 5.0.1 installer
 export PATH="/Users/$USER/anaconda3/bin:$PATH"
@@ -31,17 +31,22 @@ export PATH="$GOPATH/src/github.com/richardwu/roach-bench:$PATH"
 
 # Halite 2
 
-export PATH="/Users/$USER/Programming/halite2/hlt_client/hlt_client:$PATH"
-
+# rbenv
 which rbenv > /dev/null
 if [ $? -eq 0 ]; then
   eval "$(rbenv init -)"
 fi
 
+# fzf
+if [ -f ~/.fzf.zsh ]; then
+  source ~/.fzf.zsh
+fi
+
 # Postgres
 export PGDATA='/usr/local/pgsql/data'
 
+# Bash v4
+export PATH="/usr/local/bin/bash:$PATH"
 
 # This needs to be last: ccache: caches C compiler outputs
 export PATH="/usr/local/opt/ccache/libexec:$PATH"
-

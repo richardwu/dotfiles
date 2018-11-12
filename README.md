@@ -1,47 +1,58 @@
 # Richard's dotfiles
 
-## Cloning
-
+## 1. Cloning
 Clone this dotfile into your local repo
 ```sh
-git clone https://github.com/richardwu/dotfiles.git ~/dotfiles
+git clone https://github.com/richardwu/dotfiles.git $HOME/dotfiles
 ```
 
-## Symlinking config files
+## 2. Symlinking config files
 
-Remember to symlink these configuration files to `~/`:
+Remember to symlink these configuration files to `$HOME/`:
 ```sh
-ln -s ~/dotfiles/.profile ~/.profile
-ln -s ~/dotfiles/.zshrc ~/.zshrc
-ln -s ~/dotfiles/.tmux.conf ~/.tmux.conf
-ln -s ~/dotfiles/.vimrc ~/.vimrc
-ln -s ~/dotfiles/.vim/ ~/.vim
-ln -s ~/dotfiles/.gitignore_global ~/.gitignore_global
-ln -s ~/dotfiles/isdone.osascript ~/.isdone.osascript
+ln -s $HOME/dotfiles/.profile $HOME/.profile
+ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
+ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
+ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
+ln -s $HOME/dotfiles/.vim/ $HOME/.vim
+ln -s $HOME/dotfiles/.gitignore_global $HOME/.gitignore_global
+ln -s $HOME/dotfiles/isdone.osascript $HOME/.isdone.osascript     # MacOS only
 ```
 
-## Git configuration
+## 3. Git configuration
 
 Configure aliases and global `.gitignore_global`:
 ```sh
 ./config-git.sh "Your Name" "Your email"
 ```
 
-## tmux
+## 4. tmux
 
 Install `tmux`
 ```sh
-brew install tmux
+brew install tmux                   # Homebrew (MacOS) or Linxubrew (Linux)
 ```
 
-## Zsh
+Uncomment the appropriate section of `.tmux.conf` for your OS:
+```
+# MacOS Settings
+...
+
+# Windows Settings
+...
+
+# Linux Settings
+...
+```
+
+## 5. Zsh
 
 Install `zsh`
 ```sh
-brew install zsh zsh-completions
+brew install zsh zsh-completions    # Homebrew (MacOS) or Linxubrew (Linux)
 ```
 
-## Vim setup
+## 6. Vim setup
 
 To install all the Vim plugins, run the script
 ```sh
