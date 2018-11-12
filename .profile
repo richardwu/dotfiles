@@ -14,8 +14,9 @@ alias cp="cp -iv"
 export PATH="/Users/$USER/anaconda3/bin:$PATH"
 
 # Go
-export GOPATH="$HOME/go"
-export PATH="$GOPATH/bin:$PATH"
+export GOPATH="$HOME/go"            # GOPATH specifies workspace for non-standard library go packages i.e. your own packages
+export GOROOT="/usr/local/go"       # GOROOT specifies the directory where the go standard library is installed
+export PATH="$PATH:$GOROOT/bin"
 
 alias gogogo="cd $GOPATH"
 
