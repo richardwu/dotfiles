@@ -50,6 +50,10 @@ Install `zsh`
 ```sh
 brew install zsh zsh-completions    # Homebrew (MacOS) or Linxubrew (Linux)
 ```
+then install `oh-my-zsh`
+```
+sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)"
+```
 
 ## 6. Vim setup
 
