@@ -28,17 +28,7 @@ Install `tmux`
 brew install tmux                   # Homebrew (MacOS) or Linxubrew (Linux)
 ```
 
-Uncomment the appropriate section of `.tmux.conf` for your OS:
-```
-# MacOS Settings
-...
-
-# Windows Settings
-...
-
-# Linux Settings
-...
-```
+Uncomment the appropriate sections of `.tmux.conf` for your `tmux -V` version and OS (look for `TODO`s).
 
 ## 5. Zsh
 
@@ -64,6 +54,7 @@ Then open up Vim and run the command
 
 ## 7. Remote copy-pasting
 
+### MacOS or Linux
 
 To copy-paste through an SSH remote tunnel, one can start a launchd pbcopy service (MacOS)
 or a systemd xclip service (Linux). Simply run the following on your **local server** (service
@@ -87,3 +78,7 @@ Host myhost
 ```
 **Warning**: only do this with a trusted remote server!
 
+
+### Windows
+
+Enable X11 Forwarding in PuTTY/terminal emulator and start up an X11 server on your local machine (e.g. VcXsrv).
