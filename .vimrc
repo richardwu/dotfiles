@@ -22,12 +22,16 @@ set nofoldenable
 
 set number
 set relativenumber
+" tabs to spaces
 set expandtab
 set wrap
 set hlsearch
+" autoindent on new line
 set smartindent
 set shiftwidth=2
+" tab spacing to use when editing code
 set softtabstop=2
+" tab spacing to use when displaying tabs
 au FileType cpp,c set shiftwidth=4 softtabstop=4
 set cursorline
 " For Windows: you will need to enable X11 Forwarding in PuTTY/other emulator AND run an X11 server (e.g. VcXsrv)
@@ -38,6 +42,9 @@ set maxmempattern=10000
 " match ErrorMsg '\%>100v.\+'
 " Comments max length
 set cc=80
+" opens new file from quickfix/in general in new tab (or existing tab if file
+" opened already)
+set switchbuf+=usetab,newtab
 
 " Remap leader key
 let mapleader=','
@@ -116,6 +123,14 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 " crlogictest syntax highlighting
 autocmd BufNewFile,BufRead */sql/logictest/testdata/* set filetype=crlogictest tw=0
 
+" pdb paste shortcut {{{
+map <Leader>pdb :call InsertLine()<CR>
+
+function! InsertLine()
+  let trace = expand("import pdb; pdb.set_trace()")
+  execute "normal o".trace
+endfunction
+" }}}
 
 " Tab labelling {{{
 fu! MyTabLabel(n)
@@ -126,28 +141,28 @@ return empty(string) ? '[unnamed]' : string
 endfu
 
 fu! MyTabLine()
-let s = ''
-for i in range(tabpagenr('$'))
-" select the highlighting
-    if i + 1 == tabpagenr()
-    let s .= '%#TabLineSel#'
-    else
-    let s .= '%#TabLine#'
-    endif
+  let s = ''
+  for i in range(tabpagenr('$'))
+  " select the highlighting
+      if i + 1 == tabpagenr()
+      let s .= '%#TabLineSel#'
+      else
+      let s .= '%#TabLine#'
+      endif
 
-    " set the tab page number (for mouse clicks)
-    "let s .= '%' . (i + 1) . 'T'
-    " display tabnumber (for use with <count>gt, etc)
-    let s .= ' '. (i+1) . ' '
+      " set the tab page number (for mouse clicks)
+      "let s .= '%' . (i + 1) . 'T'
+      " display tabnumber (for use with <count>gt, etc)
+      let s .= ' '. (i+1) . ' '
 
-    " the label is made by MyTabLabel()
-    let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
+      " the label is made by MyTabLabel()
+      let s .= ' %{MyTabLabel(' . (i + 1) . ')} '
 
-    if i+1 < tabpagenr('$')
-        let s .= ' |'
-    endif
-endfor
-return s
+      if i+1 < tabpagenr('$')
+          let s .= ' |'
+      endif
+  endfor
+  return s
 endfu
 set tabline=%!MyTabLine()
 " }}}"

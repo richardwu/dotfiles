@@ -8,21 +8,16 @@ git clone https://github.com/richardwu/dotfiles.git $HOME/dotfiles
 
 ## 2. Symlinking config files
 
-Remember to symlink these configuration files to `$HOME/`:
+Symlink configuration files to `$HOME/`:
 ```sh
-ln -s $HOME/dotfiles/.profile $HOME/.profile
-ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
-ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf
-ln -s $HOME/dotfiles/.vimrc $HOME/.vimrc
-ln -s $HOME/dotfiles/.gitignore_global $HOME/.gitignore_global
-ln -s $HOME/dotfiles/isdone.osascript $HOME/.isdone.osascript     # MacOS only
+./config-symlinks.sh
 ```
 
 ## 3. Git configuration
 
 Configure aliases and global `.gitignore_global`:
 ```sh
-./config-git.sh "Your Name" "Your email"
+./config-git.sh "<Your Name>" "<Your email>"
 ```
 
 ## 4. tmux
@@ -65,3 +60,29 @@ Then open up Vim and run the command
 ```
 :PluginInstall
 ```
+
+## 7. Remote copy-pasting
+
+
+To copy-paste through an SSH remote tunnel, one can start a launchd pbcopy service (MacOS)
+or a systemd xclip service (Linux). Simply run the following on your **local server** (service
+by default binds to localhost:19988)
+```sh
+./config-remote.sh
+```
+whenever you SSH you will need to port forward from your remote server to your local service
+with the `-R` flag, for example
+```
+ssh -R 19988:localhost:19988 richardwu@192.168.11.111
+```
+or simply add the following to your `~/.ssh/config` file
+```
+Host myhost
+  Hostname 192.168.11.111
+  User richardwu
+  ...
+  RemoteForward 19988 localhost:19988       # Add this line
+  ...
+```
+**Warning**: only do this with a trusted remote server!
+

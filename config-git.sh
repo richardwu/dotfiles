@@ -1,5 +1,4 @@
 which git > /dev/null
-
 if [ $? -ne 0 ]; then
   echo 'Requires git. Exiting.'
   exit 1
