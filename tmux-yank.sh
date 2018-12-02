@@ -17,7 +17,10 @@ elif [ -n "${DISPLAY-}" ] && is_app_installed xclip; then
   copy_backend="xclip -i -f -selection primary | xclip -i -selection clipboard"
 elif [ -n "${DISPLAY-}" ] && is_app_installed xclipboard; then
   copy_backend="xclipboard -i -f -selection primary | xclipboard -i -selection clipboard"
-elif [ "$(ss -n -4 state listening "( sport = 19988 )" | tail -n +2 | wc -l)" -eq 1 ]; then
+fi
+
+# If we set up remote copy-pasting, send it to port 19988
+if [ "$(ss -n -4 state listening "( sport = 19988 )" | tail -n +2 | wc -l)" -eq 1 ]; then
   copy_backend="nc localhost 19988"
 fi
 
