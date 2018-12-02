@@ -1,3 +1,11 @@
+rm $HOME/.profile
+rm $HOME/.zshrc
+rm $HOME/.tmux.conf
+rm $HOME/.tmux/tmux-yank.sh
+rm $HOME/.vimrc
+rm $HOME/.gitignore_global
+rm $HOME/.isdone.osascript
+
 ln -s $HOME/dotfiles/.profile $HOME/.profile
 ln -s $HOME/dotfiles/.zshrc $HOME/.zshrc
 ln -s $HOME/dotfiles/.tmux.conf $HOME/.tmux.conf

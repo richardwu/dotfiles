@@ -8,7 +8,8 @@ git clone https://github.com/richardwu/dotfiles.git $HOME/dotfiles
 
 ## 2. Symlinking config files
 
-Symlink configuration files to `$HOME/`:
+Symlink configuration files to `$HOME/` (**warning**: this will `rm` existing
+configuration files in `$HOME/`):
 ```sh
 ./config-symlinks.sh
 ```
