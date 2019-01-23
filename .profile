@@ -1,4 +1,4 @@
-export uni="$HOME/Dropbox/uni-courses/4a"
+export uni="$HOME/Dropbox/uni-courses/4b"
 export code="$HOME/Programming"
 export box="$HOME/Dropbox"
 export web="$code/richardwu.github.io"
@@ -48,6 +48,9 @@ export PGDATA='/usr/local/pgsql/data'
 
 # Bash v4
 export PATH="/usr/local/bin/bash:$PATH"
+
+# Haskell
+export PATH="$HOME/Library/Haskell/bin:$PATH"
 
 # This needs to be last: ccache: caches C compiler outputs
 export PATH="/usr/local/opt/ccache/libexec:$PATH"

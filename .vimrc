@@ -42,9 +42,9 @@ set maxmempattern=10000
 " match ErrorMsg '\%>100v.\+'
 " Comments max length
 set cc=80
-" opens new file from quickfix/in general in new tab (or existing tab if file
-" opened already)
-set switchbuf+=usetab,newtab
+" open file if it is open already (including in another tab). otherwise opens
+" in new tab.
+set switchbuf+=useopen,usetab,newtab
 
 " Remap leader key
 let mapleader=','
