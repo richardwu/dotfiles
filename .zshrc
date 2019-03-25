@@ -53,6 +53,8 @@ function saydone() {
   ~/.isdone.osascript
 }
 
+# usage: manopt command opt
+# Prints manpage information for option opt for command.
 function manopt() {
     local cmd=$1 opt=$2
       [[ $opt == -* ]] || { (( ${#opt} == 1 )) && opt="-$opt" || opt="--$opt"; }

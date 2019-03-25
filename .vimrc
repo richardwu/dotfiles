@@ -22,17 +22,18 @@ set nofoldenable
 
 set number
 set relativenumber
-" tabs to spaces
-set expandtab
 set wrap
 set hlsearch
 " autoindent on new line
 set smartindent
+" tabs to spaces
+set expandtab
+" display tabs with n spaces
+set tabstop=2
 set shiftwidth=2
 " tab spacing to use when editing code
 set softtabstop=2
-" tab spacing to use when displaying tabs
-au FileType cpp,c set shiftwidth=4 softtabstop=4
+au filetype cpp,c,python set tabstop=4 shiftwidth=4 softtabstop=4
 set cursorline
 " For Windows: you will need to enable X11 Forwarding in PuTTY/other emulator AND run an X11 server (e.g. VcXsrv)
 set clipboard=unnamed
@@ -124,10 +125,11 @@ noremap <silent> ,cu :<C-B>silent <C-E>s/^\V<C-R>=escape(b:comment_leader,'\/')<
 autocmd BufNewFile,BufRead */sql/logictest/testdata/* set filetype=crlogictest tw=0
 
 " pdb paste shortcut {{{
-map <Leader>pdb :call InsertLine()<CR>
+map <Leader>pdb :call InsertLine("import pdb; pdb.set_trace()")<CR>
+map <Leader>pudb :call InsertLine("import pudb; pu.db")<CR>
 
-function! InsertLine()
-  let trace = expand("import pdb; pdb.set_trace()")
+function! InsertLine(line)
+  let trace = expand(a:line)
   execute "normal o".trace
 endfunction
 " }}}
