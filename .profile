@@ -11,7 +11,7 @@ alias mv="mv -iv"
 alias cp="cp -iv"
 
 # added by Anaconda3 5.0.1 installer
-export PATH="/Users/$USER/anaconda3/bin:$PATH"
+export PATH="/$HOME/anaconda3/bin:$PATH"
 
 # Go
 export GOPATH="$HOME/go"            # GOPATH specifies workspace for non-standard library go packages i.e. your own packages
@@ -30,7 +30,6 @@ alias startroach="sh $ROACH_SCRIPTS_DIR/start-cluster.sh"
 export PATH="$GOPATH/src/github.com/cockroachlabs/production/crl-prod:$PATH"
 export PATH="$GOPATH/src/github.com/richardwu/roach-bench:$PATH"
 
-# Halite 2
 
 # rbenv
 which rbenv > /dev/null
@@ -51,6 +50,9 @@ export PATH="/usr/local/bin/bash:$PATH"
 
 # Haskell
 export PATH="$HOME/Library/Haskell/bin:$PATH"
+
+# Disable Ctrl-S from freezing vim
+stty -ixon
 
 # This needs to be last: ccache: caches C compiler outputs
 export PATH="/usr/local/opt/ccache/libexec:$PATH"
