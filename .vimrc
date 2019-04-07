@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf.vim'
+Plugin 'git://github.com/vim-syntastic/syntastic.git'
 Plugin 'git://github.com/fatih/vim-go.git'
 
 call vundle#end()
@@ -34,6 +35,7 @@ set shiftwidth=2
 " tab spacing to use when editing code
 set softtabstop=2
 au filetype cpp,c,python set tabstop=4 shiftwidth=4 softtabstop=4
+au filetype haskell set tabstop=2 shiftwidth=2 softtabstop=2
 set cursorline
 " For Windows: you will need to enable X11 Forwarding in PuTTY/other emulator AND run an X11 server (e.g. VcXsrv)
 set clipboard=unnamed
@@ -167,4 +169,15 @@ fu! MyTabLine()
   return s
 endfu
 set tabline=%!MyTabLine()
-" }}}"
+" }}}
+
+" Syntastic {{{
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+" }}}

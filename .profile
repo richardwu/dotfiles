@@ -1,5 +1,6 @@
 export uni="$HOME/Dropbox/uni-courses/4b"
-export code="$HOME/Programming"
+export oldcode="$HOME/Programming"
+export code="$HOME/BigProgramming"
 export box="$HOME/Dropbox"
 export web="$code/richardwu.github.io"
 
