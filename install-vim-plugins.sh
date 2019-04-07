@@ -33,3 +33,11 @@ if [ ! -f "$HOME/.vim/syntax/crlogictest.vim" ]; then
   mkdir -p "$HOME/.vim/syntax"
   curl https://raw.githubusercontent.com/cockroachdb/scripts/master/scripts/crlogictest.vim > "$HOME/.vim/syntax/crlogictest.vim"
 fi
+
+which pip > /dev/null
+if [ $? -eq 0 ]; then
+  pip install flake8
+else
+  echo "[WARNING]: require pip to install pip stuff"
+  exit 1
+fi

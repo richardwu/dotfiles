@@ -10,7 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'mileszs/ack.vim'
 Plugin 'junegunn/fzf.vim'
-Plugin 'git://github.com/vim-syntastic/syntastic.git'
+Plugin 'git://github.com/w0rp/ale.git'
 Plugin 'git://github.com/fatih/vim-go.git'
 
 call vundle#end()
@@ -169,15 +169,4 @@ fu! MyTabLine()
   return s
 endfu
 set tabline=%!MyTabLine()
-" }}}
-
-" Syntastic {{{
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
 " }}}
