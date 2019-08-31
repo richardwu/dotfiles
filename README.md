@@ -54,6 +54,8 @@ Then open up Vim and run the command
 
 ## 7. Remote copy-pasting
 
+See https://hackernoon.com/tmux-in-practice-copy-text-from-remote-session-using-ssh-remote-tunnel-and-systemd-service-dd3c51bca1fa for more info.
+
 ### MacOS or Linux
 
 To copy-paste through an SSH remote tunnel, one can start a launchd pbcopy service (MacOS)

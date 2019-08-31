@@ -4,6 +4,7 @@ if [ $? -eq 0 ]; then
   echo "enabling pbcopy launchd service for remote copy-pasting"
   launchctl load local.pbcopy.plist
   launchctl start local.pbcopy
+  crontab -l | { cat; echo "@reboot launchctl start local.pbcopy"; } | crontab -
 else
   which systemctl > /dev/null
   if [ $? -ne 0 ]; then

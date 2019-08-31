@@ -49,6 +49,9 @@ set cc=80
 " in new tab.
 set switchbuf+=useopen,usetab,newtab
 
+" allow vim to work with saving crontab
+autocmd filetype crontab setlocal nobackup nowritebackup
+
 " Remap leader key
 let mapleader=','
 
@@ -169,4 +172,10 @@ fu! MyTabLine()
   return s
 endfu
 set tabline=%!MyTabLine()
+" }}}
+
+" ALE {{{
+let g:ale_linters = {'latex': [], 'tex': []}
+let g:ale_python_pylint_options = '--max-line-length=80'
+let g:ale_python_flake8_options = '--max-line-length=80'
 " }}}
