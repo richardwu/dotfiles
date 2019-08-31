@@ -23,11 +23,14 @@ alias rm="rm -iv"
 alias mv="mv -iv"
 alias cp="cp -iv"
 
-alias gmc="git commit"
 alias gma="git add"
-alias gms="git st"
-alias gml="git log"
+alias gmc="git commit"
 alias gmd="git diff"
+alias gml="git log"
+alias gms="git st"
+alias gmpl="git pull"
+alias gmps="git push"
+alias gmr="git rebase"
 
 ### PATH
 
