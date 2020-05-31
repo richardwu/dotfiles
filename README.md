@@ -32,9 +32,9 @@ Uncomment the appropriate sections of `.tmux.conf` for your `tmux -V` version an
 
 ## 5. Zsh
 
-Install `zsh`
+Install `zsh` and `fzf`
 ```sh
-brew install zsh zsh-completions    # Homebrew (MacOS) or Linxubrew (Linux)
+brew install zsh zsh-completions fzf    # Homebrew (MacOS) or Linxubrew (Linux)
 ```
 then install `oh-my-zsh`
 ```
