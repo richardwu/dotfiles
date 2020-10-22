@@ -179,3 +179,7 @@ let g:ale_linters = {'latex': [], 'tex': []}
 let g:ale_python_pylint_options = '--max-line-length=80'
 let g:ale_python_flake8_options = '--max-line-length=80'
 " }}}
+"
+
+" Disable bell sound
+set visualbell

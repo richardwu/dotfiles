@@ -62,3 +62,5 @@ function manopt() {
 }
 
 source ~/.profile
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
