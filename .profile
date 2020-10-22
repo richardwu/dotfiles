@@ -101,3 +101,9 @@ cd $HOME
 
 # Disable bell sound in less.
 export LESS="$LESS -R -Q"
+
+if [[ "$(< /proc/version)" == *microsoft* ]] ; then
+  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+fi
+
+
