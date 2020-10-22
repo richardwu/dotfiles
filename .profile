@@ -97,8 +97,6 @@ unset __conda_setup
 
 set -o ignoreeof
 
-cd $HOME
-
 # Disable bell sound in less.
 export LESS="$LESS -R -Q"
 
