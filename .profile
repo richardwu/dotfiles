@@ -61,39 +61,20 @@ fi
 if [ -f ~/.fzf.zsh ]; then
   source ~/.fzf.zsh
 fi
-# added by Anaconda3 2018.12 installer
-# >>> conda init >>>
+# >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false "/$HOME/anaconda3/bin/conda" shell.bash hook 2> /dev/null)"
+__conda_setup="$('$HOME/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
 if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
+    eval "$__conda_setup"
 else
-    if [ -f "/$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/$HOME/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
+    if [ -f "$HOME/anaconda3/etc/profile.d/conda.sh" ]; then
+        . "$HOME/anaconda3/etc/profile.d/conda.sh"
     else
-        \export PATH="/$HOME/anaconda3/bin:$PATH"
+        export PATH="$HOME/anaconda3/bin:$PATH"
     fi
 fi
 unset __conda_setup
-# <<< conda init <<<
-
-# added by Anaconda3 2019.07 installer
-# >>> conda init >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$(CONDA_REPORT_ERRORS=false '/Users/rwu1997/anaconda3/bin/conda' shell.bash hook 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    \eval "$__conda_setup"
-else
-    if [ -f "/Users/rwu1997/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/Users/rwu1997/anaconda3/etc/profile.d/conda.sh"
-        CONDA_CHANGEPS1=false conda activate base
-    else
-        \export PATH="/Users/rwu1997/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda init <<<
+# <<< conda initialize <<<
 
 set -o ignoreeof
 
@@ -104,4 +85,7 @@ if [[ "$(< /proc/version)" == *microsoft* ]] ; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 
-
+# For settings local to the system.
+if [ -f ~/.local.profile ]; then
+  source ~/.local.profile
+fi
