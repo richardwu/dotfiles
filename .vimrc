@@ -78,7 +78,7 @@ nnoremap <C-K> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 
 " The Silver Searcher {{{
   if executable('ag')
-    " Use ag over ack
+    " Use ag over ack since it's much faster
     let g:ackprg='ag --nogroup --nocolor --column'
     " Use ag over grep
     set grepprg=ag\ --nogroup\ --nocolor
