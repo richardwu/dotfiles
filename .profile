@@ -35,10 +35,6 @@ alias gmr="git rebase"
 alias sact="source activate"
 alias cenv="conda env list"
 
-### PATH
-
-export PATH="/$HOME/anaconda3/bin:$PATH"
-
 # Go
 export GOPATH="$HOME/go"            # GOPATH specifies workspace for non-standard library go packages i.e. your own packages
 export GOROOT="/usr/local/go"       # GOROOT specifies the directory where the go standard library is installed
@@ -76,12 +72,19 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+### conda shortcuts
+
+alias cact="conda activate"
+alias cdact="conda deactivate"
+
 set -o ignoreeof
 
 # Disable bell sound in less.
 export LESS="$LESS -R -Q"
 
 if [[ "$(< /proc/version)" == *microsoft* ]] ; then
+  echo "original DISPLAY: $DISPLAY"
+  # If DNS resolution fails, create a new file and symlink it to point to a fixed DNS host.
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 
@@ -91,7 +94,15 @@ export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
 
+### Yarn global bins.
+
+if [[ -x "$(yarn global bin)" ]]; then
+  export PATH="$(yarn global bin):$PATH"
+fi
+
+
 # For settings local to the system.
 if [ -f ~/.local.profile ]; then
   source ~/.local.profile
 fi
+
