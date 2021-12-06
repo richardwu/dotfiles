@@ -9,6 +9,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'mileszs/ack.vim'
+Plugin 'junegunn/fzf', { 'dir': '~/opt/fzf' }
 Plugin 'junegunn/fzf.vim'
 Plugin 'git://github.com/w0rp/ale.git'
 Plugin 'git://github.com/fatih/vim-go.git'

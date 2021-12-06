@@ -1,5 +1,10 @@
 # Richard's dotfiles
 
+## Latest tested versions
+
+macOS: Monterey 12.0.1
+
+
 ## 1. Cloning
 Clone this dotfile into your local repo
 ```sh
@@ -32,9 +37,9 @@ Uncomment the appropriate sections of `.tmux.conf` for your `tmux -V` version an
 
 ## 5. Zsh
 
-Install `zsh` and `fzf`
+Install `zsh`, `fzf`, and wget
 ```sh
-brew install zsh zsh-completions fzf    # Homebrew (MacOS) or Linxubrew (Linux)
+brew install zsh zsh-completions fzf wget    # Homebrew (MacOS) or Linxubrew (Linux)
 ```
 then install `oh-my-zsh`
 ```
