@@ -82,7 +82,7 @@ set -o ignoreeof
 # Disable bell sound in less.
 export LESS="$LESS -R -Q"
 
-if [[ "$(< /proc/version)" == *microsoft* ]] ; then
+if [[ -f /proc/version ]] && [[ "$(< /proc/version)" == *microsoft* ]] ; then
   echo "original DISPLAY: $DISPLAY"
   # If DNS resolution fails, create a new file and symlink it to point to a fixed DNS host.
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
@@ -108,3 +108,8 @@ if [ -f ~/.local.profile ]; then
   source ~/.local.profile
 fi
 
+
+# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
+export PATH="$PATH:$HOME/.rvm/bin"
+
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
