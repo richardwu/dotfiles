@@ -3,7 +3,7 @@
 ## 1. Cloning
 Clone this dotfile into your local repo
 ```sh
-git clone https://github.com/richardwu/dotfiles.git $HOME/dotfiles
+git clone git@github.com:richardwu/dotfiles.git $HOME/dotfiles
 ```
 
 ## 2. Symlinking config files

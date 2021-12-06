@@ -100,6 +100,8 @@ if [[ -x "$(yarn global bin)" ]]; then
   export PATH="$(yarn global bin):$PATH"
 fi
 
+# Homebrew
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # For settings local to the system.
 if [ -f ~/.local.profile ]; then
