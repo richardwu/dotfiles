@@ -101,7 +101,7 @@ if [[ -x "$(yarn global bin)" ]]; then
 fi
 
 # Homebrew
-eval "$(/opt/homebrew/bin/brew shellenv)"
+[[-s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # For settings local to the system.
 if [ -f ~/.local.profile ]; then
