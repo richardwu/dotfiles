@@ -119,6 +119,9 @@ export PATH="$PATH:$HOME/.rvm/bin"
 
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
 
+### Solana
+
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
 
 ### Google cloud.
 
@@ -127,3 +130,4 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
