@@ -38,7 +38,7 @@ alias cenv="conda env list"
 # Go
 export GOPATH="$HOME/go"            # GOPATH specifies workspace for non-standard library go packages i.e. your own packages
 export GOROOT="/usr/local/go"       # GOROOT specifies the directory where the go standard library is installed
-export PATH="$PATH:$GOROOT/bin"
+export PATH="$PATH:$GOROOT/bin:$GOPATH/bin"
 # Bash v4
 export PATH="/usr/local/bin/bash:$PATH"
 # Haskell
@@ -131,3 +131,4 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
+[[ -f "$HOME/.rover/env" ]] && source "$HOME/.rover/env"
