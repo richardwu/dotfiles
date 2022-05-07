@@ -5,12 +5,6 @@ stty -ixon
 
 ### Exports
 
-export uni="$HOME/Dropbox/uni-courses/4b"
-export oldcode="$HOME/Programming"
-export code="$HOME/BigProgramming"
-export box="$HOME/Dropbox"
-export web="$code/richardwu.github.io"
-
 export EDITOR=vim
 
 # Postgres
