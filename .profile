@@ -82,11 +82,6 @@ if [[ -f /proc/version ]] && [[ "$(< /proc/version)" == *microsoft* ]] ; then
   export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 
-# NVM node version manager.
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-
 
 ### Yarn global bins.
 
@@ -126,3 +121,10 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 [[ -f "$HOME/.rover/env" ]] && source "$HOME/.rover/env"
+
+export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+
+# NVM node version manager (should go last so default doesn't get reset).
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
