@@ -19,14 +19,22 @@ configuration files in `$HOME/`):
 ./config-symlinks.sh
 ```
 
-## 3. Git configuration
+## 3. Vim
+
+Most distros don't have `+clipboard` feature enabled (`vim --version`) eg WSL. Install `vim-gtk`:
+```sh
+sudo apt-get update
+sudo apt-get install -y vim-gtk
+```
+
+## 4. Git configuration
 
 Configure aliases and global `.gitignore_global`:
 ```sh
 ./config-git.sh "<Your Name>" "<Your email>"
 ```
 
-## 4. tmux
+## 5. tmux
 
 Install `tmux`
 ```sh
@@ -40,6 +48,7 @@ Uncomment the appropriate sections of `.tmux.conf` for your `tmux -V` version an
 Install `zsh`, `fzf`, and wget
 ```sh
 brew install zsh zsh-completions fzf wget    # Homebrew (MacOS) or Linxubrew (Linux)
+sudo apt-get install zsh fzf    	     # WSL/Ubuntu
 ```
 then install `oh-my-zsh`
 ```
@@ -57,7 +66,17 @@ Then open up Vim and run the command
 :PluginInstall
 ```
 
-## 7. Remote copy-pasting
+## 7. Local copy-pasting
+
+In general:
+
+1. Make sure terminal has copy to clipboard enabled
+2. Our `tmux-yank.sh` should handle tmux copy-pasta
+3. Make sure to follow Vim setup above for `+clipboard` feature
+4. Name sure `set clipboard=X` is correct for the given system (see `~/.vimrc`)
+
+
+## 8. Remote copy-pasting
 
 See https://hackernoon.com/tmux-in-practice-copy-text-from-remote-session-using-ssh-remote-tunnel-and-systemd-service-dd3c51bca1fa for more info.
 

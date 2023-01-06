@@ -85,7 +85,7 @@ fi
 
 ### Yarn global bins.
 
-if [[ -x "$(yarn global bin)" ]]; then
+if [[ "$(command -v yarn)" == "0" ]] && [[ -x "$(yarn global bin)" ]]; then
   export PATH="$(yarn global bin):$PATH"
 fi
 
