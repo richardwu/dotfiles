@@ -62,4 +62,3 @@ function manopt() {
 }
 
 source ~/.profile
-

@@ -13,6 +13,16 @@ From https://learn.microsoft.com/en-us/windows/wsl/install:
 2. Settings > > Startup Default: Profile = Ubuntu, Default Terminal = Windows Terminal
 3. Settings > Interaction: Automatically copy selection to clipboard
 
+## Enable systemctl
+
+From https://devblogs.microsoft.com/commandline/systemd-support-is-now-available-in-wsl/, add the following to `/etc/wsl.conf`:
+```
+[boot]
+systemd=true
+```
+
+Then restart wsl in Command prompt `wsl.exe --shutdown`.
+
 ## Dotfiles
 
 Follow README from [`richardwu/dotfiles`](https://github.com/richardwu/dotfiles)

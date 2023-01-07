@@ -31,6 +31,10 @@ sudo apt-get update
 sudo apt-get install -y vim-gtk
 ```
 
+## 3.5 HomeBrew/LinuxBrew
+
+See brew.sh.
+
 ## 4. Git configuration
 
 Configure aliases and global `.gitignore_global`:

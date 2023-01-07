@@ -28,6 +28,8 @@ alias gmr="git rebase"
 # conda
 alias sact="source activate"
 alias cenv="conda env list"
+# dirs
+alias ccode="$HOME/code"
 
 # Go
 export GOPATH="$HOME/go"            # GOPATH specifies workspace for non-standard library go packages i.e. your own packages
@@ -90,8 +92,9 @@ if [[ "$(command -v yarn)" == "0" ]] && [[ -x "$(yarn global bin)" ]]; then
   export PATH="$(yarn global bin):$PATH"
 fi
 
-# Homebrew
+# Homebrew/LinuxBrew
 [[ -s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
+[[ -s "/home/linuxbrew/.linuxbrew/bin/brew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # For settings local to the system.
 if [ -f ~/.local.profile ]; then
