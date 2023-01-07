@@ -19,6 +19,10 @@ configuration files in `$HOME/`):
 ./config-symlinks.sh
 ```
 
+NB: you may need to delete existing `~/.zshrc` and re-symlink it since installing
+oh-my-zsh will create a ~/.zshrc.
+
+
 ## 3. Vim
 
 Most distros don't have `+clipboard` feature enabled (`vim --version`) eg WSL. Install `vim-gtk`:

@@ -78,8 +78,9 @@ export LESS="$LESS -R -Q"
 
 if [[ -f /proc/version ]] && [[ "$(< /proc/version)" == *microsoft* ]] ; then
   echo "original DISPLAY: $DISPLAY"
+  # This makes vim not open immediately anymore... not necessary?
   # If DNS resolution fails, create a new file and symlink it to point to a fixed DNS host.
-  export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
+  # export DISPLAY=$(cat /etc/resolv.conf | grep nameserver | awk '{print $2}'):0
 fi
 
 

@@ -9,10 +9,8 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 Plugin 'mileszs/ack.vim'
-Plugin 'junegunn/fzf', { 'dir': '~/opt/fzf' }
+Plugin 'junegunn/fzf', {'do': { -> fzf#install() } }
 Plugin 'junegunn/fzf.vim'
-Plugin 'git://github.com/w0rp/ale.git'
-Plugin 'git://github.com/fatih/vim-go.git'
 
 call vundle#end()
 filetype plugin indent on
@@ -38,7 +36,7 @@ set softtabstop=2
 au filetype cpp,c,python set tabstop=4 shiftwidth=4 softtabstop=4
 au filetype haskell set tabstop=2 shiftwidth=2 softtabstop=2
 set cursorline
-" Need unnamedplus for WSL, not sure if works for other Ubuntu distros...
+" TODO: Need unnamedplus for WSL, not sure if works for other Ubuntu distros...
 if (match(system("cat /etc/issue"), "Ubuntu") != -1)
   set clipboard=unnamedplus
 else
@@ -91,7 +89,7 @@ nnoremap <C-K> :grep! "\b<C-R><C-W>\b"<CR>:cw<CR>
 " }}}
 
 " fzf {{{
-  set rtp+=/usr/local/opt/fzf
+  set rtp+=system("which fzf")
   map <C-p> :Files<cr>
   let g:fzf_layout = {'down': '~30%'}
 

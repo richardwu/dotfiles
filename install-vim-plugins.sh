@@ -25,16 +25,6 @@ if [ ! -x "$(command -v fzf)" ]; then
   $cmd install fzf
 fi
 
-# Get ag
-if [ ! -x "$(command -v ag)" ]; then
-  if [[ $cmd == "brew" ]]; then
-    pkg=the_silver_searcher
-  else
-    pkg=silversearcher-ag
-  fi
-  $cmd install $pkg
-fi
-
 # Get Vundle
 if [ -x "$(command -v git)" ]; then
   if [ ! -d "$HOME/.vim/bundle/Vundle.vim" ]; then
