@@ -61,4 +61,6 @@ function manopt() {
         man "$cmd" | col -b | awk -v opt="$opt" -v RS= '$0 ~ "(^|,)[[:blank:]]+" opt "([[:punct:][:space:]]|$)"'
 }
 
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
 source ~/.profile

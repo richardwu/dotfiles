@@ -187,3 +187,6 @@ let g:ale_python_flake8_options = '--max-line-length=80'
 " Disable bell sound
 set visualbell
 
+
+" otherwise typesript highlight very slow https://jameschambers.co.uk/vim-typescript-slow
+set re=0

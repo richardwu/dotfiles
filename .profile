@@ -3,6 +3,12 @@
 # Disable Ctrl-S from freezing vim
 stty -ixon
 
+# For settings local to the system.
+if [ -f ~/.local.profile ]; then
+  source ~/.local.profile
+fi
+
+
 ### Exports
 
 export EDITOR=vim
@@ -88,17 +94,14 @@ fi
 
 ### Yarn global bins.
 
-if [[ "$(command -v yarn)" == "0" ]] && [[ -x "$(yarn global bin)" ]]; then
-  export PATH="$(yarn global bin):$PATH"
-fi
+export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
 
 # Homebrew/LinuxBrew
 [[ -s "/opt/homebrew/bin/brew" ]] && eval "$(/opt/homebrew/bin/brew shellenv)"
 [[ -s "/home/linuxbrew/.linuxbrew/bin/brew" ]] && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
-# For settings local to the system.
-if [ -f ~/.local.profile ]; then
-  source ~/.local.profile
+if [[ -s "/opt/homebrew/anaconda3" ]]; then
+  export PATH="/opt/homebrew/anaconda3/bin:$PATH"
 fi
 
 
@@ -115,6 +118,8 @@ export PATH="$PATH:$HOME/.rvm/bin"
 ### Solana
 
 export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
+# Anchor
+export PATH="$HOME/.avm/bin:$PATH"
 
 ### Google cloud.
 
