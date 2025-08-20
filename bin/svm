@@ -1,0 +1,15 @@
+#!/bin/bash
+
+if [[ $# -ne 1 ]]; then
+  echo "usage: svm <version>"
+  exit 1
+fi
+
+SOLANA_VERSION=$1
+PREF="$HOME/.local/share/solana/install"
+TARG="$PREF/releases/${SOLANA_VERSION}/solana-release"
+
+cd $PREF
+rm "$PREF/active_release" 2> /dev/null
+echo "+linking solana release $TARG"
+ln -s $TARG "$PREF/active_release"
